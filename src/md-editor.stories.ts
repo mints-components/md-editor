@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Example as Component } from './example';
+import { MdEditor as Component } from './md-editor';
 
 const meta = {
-  title: 'Components/Example',
+  title: 'Components/MdEditor',
   component: Component,
   parameters: {
     layout: 'centered',
@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Example: Story = {
+export const MdEditor: Story = {
   args: {
     children: 'This is a example component',
   },
