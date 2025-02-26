@@ -3529,6 +3529,7 @@ __metadata:
   dependencies:
     "@chromatic-com/storybook": ^1
     "@mints/eslint-config": ^1.0.0-beta.1
+    "@mui/icons-material": ^6.4.5
     "@mui/material": ^6.4.5
     "@mui/styled-engine-sc": ^6.4.3
     "@storybook/addon-essentials": ^8.1.11
@@ -3564,6 +3565,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-markdown: ^10.0.0
+    styled-components: ^6.1.15
   languageName: unknown
   linkType: soft
 
@@ -3583,6 +3585,22 @@ __metadata:
   version: 6.4.5
   resolution: "@mui/core-downloads-tracker@npm:6.4.5"
   checksum: 45de88d2b63f6cfaaf5d141f6d96accb53a6455ea6d7e9f1b370b4811b9b728de2289d33f77d7d037b5c203197dced8cd366b0245049d3e887dc30c36a2251db
+  languageName: node
+  linkType: hard
+
+"@mui/icons-material@npm:^6.4.5":
+  version: 6.4.5
+  resolution: "@mui/icons-material@npm:6.4.5"
+  dependencies:
+    "@babel/runtime": ^7.26.0
+  peerDependencies:
+    "@mui/material": ^6.4.5
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 36295cd48d6bba2a24d34c31a4bfe19c1bf8de7d914ecaf6d6c8d85b0ab53ef46f388c57d093a3343a31c1366b1044c124d5dd5348db8c528d05ff6408b651f5
   languageName: node
   linkType: hard
 
