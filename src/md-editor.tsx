@@ -1,13 +1,3 @@
-import React, { useState, useRef } from 'react';
-import {
-  Container,
-  TextField,
-  Paper,
-  IconButton,
-  Stack,
-  Tooltip,
-  Divider,
-} from '@mui/material';
 import {
   Visibility,
   VisibilityOff,
@@ -19,6 +9,16 @@ import {
   Image,
   Code,
 } from '@mui/icons-material';
+import {
+  Container,
+  TextField,
+  Paper,
+  IconButton,
+  Stack,
+  Tooltip,
+  Divider,
+} from '@mui/material';
+import React, { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 export const MdEditor: React.FC = () => {

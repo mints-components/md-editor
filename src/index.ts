@@ -1,1 +1,1 @@
-export * from './example';
+export * from './md-editor';
