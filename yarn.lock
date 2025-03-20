@@ -2543,9 +2543,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mints/component-template@workspace:.":
+"@mints/eslint-config@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@mints/eslint-config@npm:2.0.0"
+  dependencies:
+    eslint-config-prettier: "npm:^10.1.1"
+    eslint-plugin-import: "npm:^2.31.0"
+    eslint-plugin-prettier: "npm:^5.2.3"
+    eslint-plugin-react: "npm:^7.37.4"
+    eslint-plugin-react-hooks: "npm:^5.2.0"
+    globals: "npm:^16.0.0"
+    typescript-eslint: "npm:^8.26.1"
+  peerDependencies:
+    eslint: ^9
+    prettier: ^3
+  checksum: 10/7708d5de7c50a039d990d2cd094c69401a61ab6960dc4eea4baf12eba9218df307ea4a787b9fab0a7dd7ec870cf7be368c722b28abe51a13157411501f429a09
+  languageName: node
+  linkType: hard
+
+"@mints/md-editor@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@mints/component-template@workspace:."
+  resolution: "@mints/md-editor@workspace:."
   dependencies:
     "@chromatic-com/storybook": "npm:^1"
     "@mints/eslint-config": "npm:^2.0.0"
@@ -2587,24 +2605,6 @@ __metadata:
     styled-components: ^6.1.15
   languageName: unknown
   linkType: soft
-
-"@mints/eslint-config@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@mints/eslint-config@npm:2.0.0"
-  dependencies:
-    eslint-config-prettier: "npm:^10.1.1"
-    eslint-plugin-import: "npm:^2.31.0"
-    eslint-plugin-prettier: "npm:^5.2.3"
-    eslint-plugin-react: "npm:^7.37.4"
-    eslint-plugin-react-hooks: "npm:^5.2.0"
-    globals: "npm:^16.0.0"
-    typescript-eslint: "npm:^8.26.1"
-  peerDependencies:
-    eslint: ^9
-    prettier: ^3
-  checksum: 10/7708d5de7c50a039d990d2cd094c69401a61ab6960dc4eea4baf12eba9218df307ea4a787b9fab0a7dd7ec870cf7be368c722b28abe51a13157411501f429a09
-  languageName: node
-  linkType: hard
 
 "@mui/core-downloads-tracker@npm:^6.4.5":
   version: 6.4.5

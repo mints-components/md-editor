@@ -1,24 +1,39 @@
 {
-  "name": "@mints/component-template",
+  "name": "@mints/md-editor",
   "packageManager": "yarn@4.7.0",
   "version": "1.0.0",
+  "keywords": [
+    "react",
+    "react-components",
+    "mui",
+    "markdown",
+    "markdown-editor",
+    "md-editor",
+    "mints-components"
+  ],
+  "description": "Markdown Editor for Mints Components",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mints-components/md-editor.git"
+  },
+  "license": "MIT",
   "type": "module",
   "files": [
     "dist",
     "types"
   ],
   "types": "types",
-  "main": "./dist/my-component.umd.cjs",
-  "module": "./dist/my-component.js",
+  "main": "./dist/md-editor.umd.cjs",
+  "module": "./dist/md-editor.js",
   "exports": {
     ".": {
       "import": {
         "types": "./types/index.d.ts",
-        "default": "./dist/my-component.js"
+        "default": "./dist/md-editor.js"
       },
       "require": {
         "types": "./types/index.d.ts",
-        "default": "./dist/my-component.umd.cjs"
+        "default": "./dist/md-editor.umd.cjs"
       }
     }
   },
