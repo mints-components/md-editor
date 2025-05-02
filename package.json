@@ -59,26 +59,8 @@
       "prettier --write"
     ]
   },
-  "resolutions": {
-    "@mui/styled-engine": "npm:@mui/styled-engine-sc@^6.4.3"
-  },
   "dependencies": {
-    "@mui/icons-material": "^6.4.5",
-    "@mui/material": "^6.4.5",
-    "@mui/styled-engine-sc": "^6.4.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-markdown": "^10.0.0",
-    "styled-components": "^6.1.15"
-  },
-  "peerDependencies": {
-    "@mui/icons-material": "^6.4.5",
-    "@mui/material": "^6.4.5",
-    "@mui/styled-engine-sc": "^6.4.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-markdown": "^10.0.0",
-    "styled-components": "^6.1.15"
+    "react-markdown": "^10.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1",

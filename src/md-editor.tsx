@@ -1,34 +1,13 @@
-import {
-  Visibility,
-  VisibilityOff,
-  FormatBold,
-  FormatItalic,
-  FormatListBulleted,
-  FormatListNumbered,
-  Link as LinkIcon,
-  Image,
-  Code,
-} from '@mui/icons-material';
-import {
-  Container,
-  TextField,
-  Paper,
-  IconButton,
-  Stack,
-  Tooltip,
-  Divider,
-} from '@mui/material';
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-export const MdEditor: React.FC = () => {
-  const [markdown, setMarkdown] = useState<string>('');
-  const [showPreview, setShowPreview] = useState<boolean>(false);
+export function MdEditor() {
+  const [markdown, setMarkdown] = useState('');
+  const [showPreview, setShowPreview] = useState(false);
   const textFieldRef = useRef<HTMLTextAreaElement>(null);
 
   const handleFormatText = (format: string) => {
     if (!textFieldRef.current) return;
-
     const textField = textFieldRef.current;
     const start = textField.selectionStart;
     const end = textField.selectionEnd;
@@ -80,7 +59,6 @@ export const MdEditor: React.FC = () => {
       markdown.substring(0, start) + formattedText + markdown.substring(end);
     setMarkdown(newText);
 
-    // Set cursor position after the operation
     setTimeout(() => {
       if (textFieldRef.current) {
         textFieldRef.current.focus();
@@ -100,82 +78,84 @@ export const MdEditor: React.FC = () => {
   };
 
   return (
-    <Container style={{ padding: '2rem' }}>
-      <Paper style={{ width: 960, padding: '1rem', marginBottom: '1rem' }}>
-        <Stack direction="row" spacing={1} style={{ marginBottom: '1rem' }}>
-          <Tooltip title="Bold">
-            <IconButton onClick={() => handleFormatText('bold')}>
-              <FormatBold />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Italic">
-            <IconButton onClick={() => handleFormatText('italic')}>
-              <FormatItalic />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Bullet List">
-            <IconButton onClick={() => handleFormatText('bullet-list')}>
-              <FormatListBulleted />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Numbered List">
-            <IconButton onClick={() => handleFormatText('number-list')}>
-              <FormatListNumbered />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Link">
-            <IconButton onClick={() => handleFormatText('link')}>
-              <LinkIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Image">
-            <IconButton onClick={() => handleFormatText('image')}>
-              <Image />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Code">
-            <IconButton onClick={() => handleFormatText('code')}>
-              <Code />
-            </IconButton>
-          </Tooltip>
-          <Divider orientation="vertical" flexItem />
-          <Tooltip title={showPreview ? 'Hide Preview' : 'Show Preview'}>
-            <IconButton onClick={() => setShowPreview(!showPreview)}>
-              {showPreview ? <Visibility /> : <VisibilityOff />}
-            </IconButton>
-          </Tooltip>
-        </Stack>
+    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '1rem' }}>
+      <div
+        style={{
+          border: '1px solid #ddd',
+          borderRadius: '8px',
+          padding: '1rem',
+          marginBottom: '1rem',
+        }}
+      >
+        <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
+          <button onClick={() => handleFormatText('bold')} title="Bold">
+            B
+          </button>
+          <button onClick={() => handleFormatText('italic')} title="Italic">
+            <i>I</i>
+          </button>
+          <button
+            onClick={() => handleFormatText('bullet-list')}
+            title="Bullet List"
+          >
+            • List
+          </button>
+          <button
+            onClick={() => handleFormatText('number-list')}
+            title="Numbered List"
+          >
+            1. List
+          </button>
+          <button onClick={() => handleFormatText('link')} title="Link">
+            🔗
+          </button>
+          <button onClick={() => handleFormatText('image')} title="Image">
+            🖼️
+          </button>
+          <button onClick={() => handleFormatText('code')} title="Code">
+            `Code`
+          </button>
+          <button
+            onClick={() => setShowPreview(!showPreview)}
+            title={showPreview ? 'Hide Preview' : 'Show Preview'}
+          >
+            {showPreview ? '🙈' : '👁️'}
+          </button>
+        </div>
 
-        <Stack direction="row" gap={2}>
-          <div style={{ flex: 1 }}>
-            <TextField
-              fullWidth
-              multiline
-              rows={10}
-              variant="outlined"
-              placeholder="Write your markdown here..."
-              value={markdown}
-              onChange={(e) => setMarkdown(e.target.value)}
-              inputRef={textFieldRef}
-            />
-          </div>
+        <div style={{ display: 'flex', gap: '1rem' }}>
+          <textarea
+            ref={textFieldRef}
+            style={{
+              flex: 1,
+              height: '300px',
+              padding: '0.5rem',
+              border: '1px solid #ccc',
+              borderRadius: '4px',
+            }}
+            placeholder="Write your markdown here..."
+            value={markdown}
+            onChange={(e) => setMarkdown(e.target.value)}
+          />
           {showPreview && (
             <div
               style={{
                 flex: 1,
-                border: '1px solid #e0e0e0',
-                padding: '8px',
+                height: '300px',
+                overflowY: 'auto',
+                border: '1px solid #ccc',
                 borderRadius: '4px',
-                overflow: 'auto',
+                padding: '0.5rem',
+                background: '#f9f9f9',
               }}
             >
               <ReactMarkdown>{markdown}</ReactMarkdown>
             </div>
           )}
-        </Stack>
-      </Paper>
-    </Container>
+        </div>
+      </div>
+    </div>
   );
-};
+}
 
 export default MdEditor;
